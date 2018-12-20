@@ -1,0 +1,16 @@
+import pandas as pd
+import matplotlib.pyplot as plt 
+
+
+datos=pd.read_excel('GRAFICOIGAENAC.xlsx')
+df=pd.DataFrame(datos)
+xlsx=pd.ExcelFile('GRAFICOIGAENAC.xlsx')
+print(xlsx.sheet_names)
+
+df=xlsx.parse('NORMALIZADA')
+print(df)
+plot = df.plot(figsize=(10,10))
+plt.title('BIRTHS-IGAE')
+
+
+#código corto que agrega matplotlib a codigo de pandas
