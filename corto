@@ -1,0 +1,10 @@
+import pandas as pd
+
+datos=pd.read_excel('GRAFICOIGAENAC.xlsx')
+df=pd.DataFrame(datos)
+
+
+plot = datos.plot(figsize=(10,8))
+df.groupby('MONTH')['BIRTHS']['IGAE'].sum().plot(legend= 'Reverse')
+
+#este es el codigo mas corto posible que grafica sin problemas datos simples
