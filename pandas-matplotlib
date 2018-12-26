@@ -7,10 +7,12 @@ df=pd.DataFrame(datos)
 xlsx=pd.ExcelFile('GRAFICOIGAENAC.xlsx')
 print(xlsx.sheet_names)
 
+x='MONTH'
+y='BIRTHS', 'IGAE'
+
 df=xlsx.parse('NORMALIZADA')
-print(df)
-plot = df.plot(figsize=(10,10))
-plt.title('BIRTHS-IGAE')
-
-
-#código corto que agrega matplotlib a codigo de pandas
+df.plot(kind='line', x='MONTH', figsize=(7,7))
+plt.title('BIRTHS-IGAE', fontsize=15)
+plt.xlabel('MONTH', fontsize=15)
+plt.ylabel('NORMALIZED VALUE', fontsize=15)
+plt.legend(loc='lower right')
