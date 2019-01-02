@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 datos=pd.read_excel('GRAFICOIGAENAC.xlsx')
 df=pd.DataFrame(datos)
 xlsx=pd.ExcelFile('GRAFICOIGAENAC.xlsx')
-print(xlsx.sheet_names)
+
 
 x='MONTH'
 y='BIRTHS', 'IGAE'
